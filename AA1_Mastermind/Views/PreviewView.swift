@@ -20,6 +20,7 @@ struct PreviewView: View
     {
         HStack
         {
+            Spacer()
             Text(m_try)
             .font(.title)
             .foregroundColor(.gray)
@@ -37,6 +38,43 @@ struct PreviewView: View
                 .fill(Color.gray)
                 .frame(width: m_width, height: m_height)
             Spacer()
+            
+            VStack
+            {
+                Circle()
+                    .fill(Color.gray)
+                    .frame(width: m_width / 3, height: m_height / 3)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                Circle()
+                    .fill(Color.gray)
+                    .frame(width: m_width / 3, height: m_height / 3)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                Spacer()
+            }
+            VStack
+            {
+                Circle()
+                    .fill(Color.gray)
+                    .frame(width: m_width / 3, height: m_height / 3)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                Circle()
+                    .fill(Color.gray)
+                    .frame(width: m_width / 3, height: m_height / 3)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                Spacer()
+            }
         }
     }
 }

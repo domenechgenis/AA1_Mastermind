@@ -19,7 +19,6 @@ struct ContentView: View {
             //Tittle??
             VStack
             {
-                
                 PreviewView(viewModel: viewModel, m_try: "7")
                 PreviewView(viewModel: viewModel, m_try: "6")
                 PreviewView(viewModel: viewModel, m_try: "5")
@@ -30,7 +29,6 @@ struct ContentView: View {
                 
                 HStack
                 {
-                    Spacer()
                     ColorsView(viewModel: viewModel, color: .red)
                     Spacer()
                     ColorsView(viewModel: viewModel, color: .green)
