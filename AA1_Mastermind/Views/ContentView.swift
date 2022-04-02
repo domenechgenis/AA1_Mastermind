@@ -12,6 +12,10 @@ struct ContentView: View {
     var body: some View {
         VStack
         {
+            //Padding on top
+            Spacer()
+            Spacer()
+            
             //Tittle??
             VStack
             {
@@ -19,18 +23,19 @@ struct ContentView: View {
                 {
                     
                 }
-                HStack{
-                    ColorsView(viewModel: viewModel, color: .blue)
-                    Spacer()
+                HStack
+                {
                     ColorsView(viewModel: viewModel, color: .red)
                     Spacer()
                     ColorsView(viewModel: viewModel, color: .green)
                     Spacer()
-                    ColorsView(viewModel: viewModel, color: .yellow)
+                    ColorsView(viewModel: viewModel, color: .blue)
                     Spacer()
                     ColorsView(viewModel: viewModel, color: .purple)
                 }
+                
                 .padding()
+                
                 HStack
                 {
                     Spacer()
@@ -65,5 +70,8 @@ struct ContentView: View {
                 }
             }
         }
+        //Padding on bottom
+        Spacer()
+        Spacer()
     }
 }
