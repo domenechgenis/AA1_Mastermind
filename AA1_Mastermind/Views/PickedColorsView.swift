@@ -8,11 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct PickedColorsView: View{
-    var body: some View{
-        HStack{
+struct PickedColorsView: View
+{
+    var body: some View
+    {
+        HStack
+        {
             
         }
     }
-    
 }

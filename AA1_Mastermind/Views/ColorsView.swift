@@ -8,10 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct ColorsView: View {
+struct ColorsView: View
+{
     @ObservedObject var viewModel: ViewModel
+    
     var color: Color
-    var body: some View{
+    var body: some View
+    {
         Button("")
         {
             viewModel.AddColor(color)

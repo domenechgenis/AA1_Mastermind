@@ -15,6 +15,7 @@
 		53AFB06D27F86BF8005F6826 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AFB06C27F86BF8005F6826 /* Model.swift */; };
 		53ED005727F8B2DD009ED631 /* PickedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED005627F8B2DD009ED631 /* PickedColorsView.swift */; };
 		53ED005927F8B2E9009ED631 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED005827F8B2E9009ED631 /* ColorsView.swift */; };
+		53ED005B27F8C4C3009ED631 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED005A27F8C4C3009ED631 /* PreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		53AFB06C27F86BF8005F6826 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		53ED005627F8B2DD009ED631 /* PickedColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedColorsView.swift; sourceTree = "<group>"; };
 		53ED005827F8B2E9009ED631 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
+		53ED005A27F8C4C3009ED631 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				53AFB05A27F863E3005F6826 /* ContentView.swift */,
 				53ED005627F8B2DD009ED631 /* PickedColorsView.swift */,
 				53ED005827F8B2E9009ED631 /* ColorsView.swift */,
+				53ED005A27F8C4C3009ED631 /* PreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			files = (
 				53ED005927F8B2E9009ED631 /* ColorsView.swift in Sources */,
 				53AFB05B27F863E3005F6826 /* ContentView.swift in Sources */,
+				53ED005B27F8C4C3009ED631 /* PreviewView.swift in Sources */,
 				53AFB06827F86AE6005F6826 /* ViewModel.swift in Sources */,
 				53AFB05927F863E3005F6826 /* AA1_MastermindApp.swift in Sources */,
 				53ED005727F8B2DD009ED631 /* PickedColorsView.swift in Sources */,

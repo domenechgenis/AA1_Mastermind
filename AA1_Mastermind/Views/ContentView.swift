@@ -21,7 +21,11 @@ struct ContentView: View {
             {
                 List
                 {
-                    
+                    //List
+                    PreviewView(viewModel: viewModel)
+                    PreviewView(viewModel: viewModel)
+                    PreviewView(viewModel: viewModel)
+                    PreviewView(viewModel: viewModel)
                 }
                 HStack
                 {
