@@ -20,7 +20,9 @@ class ViewModel: ObservableObject {
     
     init() {
         self.m_tittleText = "Welcome to Mastermind"
-        self.m_playerCombinations = [Combination(m_position: <#T##Int#>, colors: <#T##[Color]#>)
+        self.m_playerCombinations = [Combination(m_position: 1, colors: [Color.red,Color.green,Color.blue])]
+        
+        m_solution = Combination(m_position: 0, colors: [Color.red,Color.green,Color.blue])
     }
     
     func StartGamePressed()
