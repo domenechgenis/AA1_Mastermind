@@ -10,22 +10,60 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel : ViewModel
     var body: some View {
-        VStack{
-            //Tittle
-            Text(viewModel.m_tittleText)
-                .font(.title)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-        }
-        HStack{
-            Spacer()
-            Button("Start Game")
+        VStack
+        {
+            //Tittle??
+            VStack
             {
-                viewModel.StartGamePressed()
+                List
+                {
+                    
+                }
+                HStack{
+                    ColorsView(viewModel: viewModel, color: .blue)
+                    Spacer()
+                    ColorsView(viewModel: viewModel, color: .red)
+                    Spacer()
+                    ColorsView(viewModel: viewModel, color: .green)
+                    Spacer()
+                    ColorsView(viewModel: viewModel, color: .yellow)
+                    Spacer()
+                    ColorsView(viewModel: viewModel, color: .purple)
+                }
+                .padding()
+                HStack
+                {
+                    Spacer()
+                    Button("Start Game")
+                    {
+                        viewModel.StartGamePressed()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    Spacer()
+                    
+                    Spacer()
+                    Button("Start Game")
+                    {
+                        viewModel.StartGamePressed()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    Spacer()
+                    
+                    Spacer()
+                    Button("Start Game")
+                    {
+                        viewModel.StartGamePressed()
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    Spacer()
+                }
             }
-            .foregroundColor(.white)
-            .padding()
-            .background(Color.blue)
-            Spacer()
         }
     }
 }
