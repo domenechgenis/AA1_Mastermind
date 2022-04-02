@@ -11,15 +11,16 @@ import SwiftUI
 struct PreviewView: View
 {
     @ObservedObject var viewModel: ViewModel
+    var m_try: String
     
-    private let m_width: Float = 35;
-    private let m_height: Float = 35;
+    private let m_width: CGFloat = 35.0;
+    private let m_height: CGFloat = 35.0;
     
     var body: some View
     {
         HStack
         {
-            Text("0")
+            Text(m_try)
             .font(.title)
             .foregroundColor(.gray)
             Spacer()
