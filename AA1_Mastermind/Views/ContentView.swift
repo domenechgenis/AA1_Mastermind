@@ -30,20 +30,17 @@ struct ContentView: View {
                 HStack
                 {
                     ColorsView(viewModel: viewModel, color: .red)
-                    Spacer()
                     ColorsView(viewModel: viewModel, color: .green)
-                    Spacer()
                     ColorsView(viewModel: viewModel, color: .blue)
-                    Spacer()
                     ColorsView(viewModel: viewModel, color: .purple)
                 }
                 .padding()
                 HStack
                 {
                     Spacer()
-                    Button("Start Game")
+                    Button("Try Combination")
                     {
-                        viewModel.StartGamePressed()
+                        
                     }
                     .foregroundColor(.white)
                     .padding()
@@ -51,19 +48,9 @@ struct ContentView: View {
                     Spacer()
                     
                     Spacer()
-                    Button("Start Game")
+                    Button("Erase Combination")
                     {
-                        viewModel.StartGamePressed()
-                    }
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    Spacer()
-                    
-                    Spacer()
-                    Button("Start Game")
-                    {
-                        viewModel.StartGamePressed()
+                        
                     }
                     .foregroundColor(.white)
                     .padding()

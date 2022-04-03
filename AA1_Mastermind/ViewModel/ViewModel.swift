@@ -2,7 +2,7 @@
 //  ViewModel.swift
 //  AA1_Mastermind
 //
-//  Created by Ferran on 2/4/22.
+//  Created by Genis Domenech Traver on 2/4/22.
 //
 
 import Foundation
@@ -14,18 +14,47 @@ class ViewModel: ObservableObject {
     var m_solution: Combination
     @Published var m_playerCombinations: [Combination]
     
-    
-    init() {
+    init()
+    {
         self.m_playerCombinations = [Combination(m_position: 1, colors: [Color.red,Color.green,Color.blue])]
         
-        m_solution = Combination(m_position: 0, colors: [Color.red,Color.green,Color.blue])
+        m_solution = Combination(m_position: 0, colors:
+                                    [Color.red,Color.green,Color.blue,Color.purple])
+        
+        GetRandomSolution()
     }
     
-    func StartGamePressed()
+    func AddColor(_ selected_color : Color)
     {
+        print("Adding color to the game...")
+        m_playerCombinations[0].colors[0] = Color.gray
     }
     
-    func AddColor(_ color : Color)
+    func GetRandomSolution()
     {
+        for i in 0...3
+        {
+            var randomNum = 0
+            randomNum = Int.random(in: 0...3)
+            switch randomNum {
+            case 0:
+                m_solution.colors[i] = .red
+                break
+            case 1:
+                m_solution.colors[i] = .green
+                break
+            case 2:
+                m_solution.colors[i] = .blue
+                break
+            case 3:
+                m_solution.colors[i] = .purple
+                break
+            default:
+                print("Number not complemented, error")
+                break
+            }
+        }
     }
+    
+    
 }

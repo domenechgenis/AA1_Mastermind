@@ -2,7 +2,7 @@
 //  PreviewView.swift
 //  AA1_Mastermind
 //
-//  Created by Ferran on 2/4/22.
+//  Created by Genis Domenech Traver on 2/4/22.
 //
 
 import Foundation
