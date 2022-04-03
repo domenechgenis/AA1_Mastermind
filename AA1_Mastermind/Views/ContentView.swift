@@ -19,14 +19,20 @@ struct ContentView: View {
             //Tittle??
             VStack
             {
-                PreviewView(viewModel: viewModel, m_try: "7")
-                PreviewView(viewModel: viewModel, m_try: "6")
-                PreviewView(viewModel: viewModel, m_try: "5")
-                PreviewView(viewModel: viewModel, m_try: "4")
-                PreviewView(viewModel: viewModel, m_try: "3")
-                PreviewView(viewModel: viewModel, m_try: "2")
-                PreviewView(viewModel: viewModel, m_try: "1")
-                
+                List
+                {
+                    PreviewView(viewModel: viewModel, m_try: "10 - ")
+                    PreviewView(viewModel: viewModel, m_try: "9 - ")
+                    PreviewView(viewModel: viewModel, m_try: "8 - ")
+                    PreviewView(viewModel: viewModel, m_try: "7 - ")
+                    PreviewView(viewModel: viewModel, m_try: "6 - ")
+                    PreviewView(viewModel: viewModel, m_try: "5 - ")
+                    PreviewView(viewModel: viewModel, m_try: "4 - ")
+                    PreviewView(viewModel: viewModel, m_try: "3 - ")
+                    PreviewView(viewModel: viewModel, m_try: "2 - ")
+                    PreviewView(viewModel: viewModel, m_try: "1 - ")
+                }
+            
                 HStack
                 {
                     ColorsView(viewModel: viewModel, color: .red)

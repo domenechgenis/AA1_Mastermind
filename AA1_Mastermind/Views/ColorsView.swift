@@ -13,20 +13,28 @@ struct ColorsView: View
     @ObservedObject var viewModel: ViewModel
     
     var color: Color
-    var m_width : Float = 45.0;
-    var m_height : Float = 45.0;
+    var m_width : CGFloat = 45.0;
+    var m_height : CGFloat = 45.0;
     
     var body: some View
     {
-        Button(action: {
-            viewModel.AddColor(color)
+        /*Button(action: {
+            print("Button pressed")
         }, label: {
             Text("")
-                .frame(width: 45, height: 45, alignment: .center)
-                .foregroundColor(color)
-                .background(color)
-                .cornerRadius(45)
         })
+        .frame(width: m_width, height: m_height, alignment: .center)
+        .background(color)
+        .cornerRadius(45)
+        */
+        
+        Button("Erase")
+        {
+            viewModel.AddColor(color)
+        }
+        .frame(width: m_width, height: m_height, alignment: .center)
+        .background(color)
+        .cornerRadius(45)
     }
 }
 
