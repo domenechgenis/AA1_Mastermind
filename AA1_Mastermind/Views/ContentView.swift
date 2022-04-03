@@ -40,7 +40,7 @@ struct ContentView: View {
                     Spacer()
                     Button("Try Combination")
                     {
-                        
+                        viewModel.TryCurrentCombination()
                     }
                     .foregroundColor(.white)
                     .padding()
@@ -50,7 +50,7 @@ struct ContentView: View {
                     Spacer()
                     Button("Erase Combination")
                     {
-                        
+                        viewModel.EraseCurrentCombination()
                     }
                     .foregroundColor(.white)
                     .padding()

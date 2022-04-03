@@ -13,6 +13,8 @@ class ViewModel: ObservableObject {
     //Game Variables
     var m_solution: Combination
     @Published var m_playerCombinations: [Combination]
+    var m_CurrentTurn = 1
+    var m_MaxTurns = 8
     
     init()
     {
@@ -26,8 +28,12 @@ class ViewModel: ObservableObject {
     
     func AddColor(_ selected_color : Color)
     {
-        print("Adding color to the game...")
-        m_playerCombinations[0].colors[0] = Color.gray
+        if(m_CurrentTurn < m_MaxTurns)
+        {
+            print("Adding color to the game...")
+            m_playerCombinations[0].colors[0] = Color.gray
+        }
+        
     }
     
     func GetRandomSolution()
@@ -54,7 +60,20 @@ class ViewModel: ObservableObject {
                 break
             }
         }
+        print("The solution is:")
+        print(m_solution.colors[0])
+        print(m_solution.colors[1])
+        print(m_solution.colors[2])
+        print(m_solution.colors[3])
     }
     
+    func TryCurrentCombination()
+    {
+        m_CurrentTurn = m_CurrentTurn + 1
+    }
     
+    func EraseCurrentCombination()
+    {
+        
+    }
 }
