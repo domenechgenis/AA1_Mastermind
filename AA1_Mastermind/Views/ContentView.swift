@@ -21,7 +21,6 @@ struct ContentView: View {
             {
                 List
                 {
-                    PreviewView(viewModel: viewModel, m_try: "10 - ")
                     PreviewView(viewModel: viewModel, m_try: "9 - ")
                     PreviewView(viewModel: viewModel, m_try: "8 - ")
                     PreviewView(viewModel: viewModel, m_try: "7 - ")

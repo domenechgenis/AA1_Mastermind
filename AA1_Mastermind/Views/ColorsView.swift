@@ -18,17 +18,7 @@ struct ColorsView: View
     
     var body: some View
     {
-        /*Button(action: {
-            print("Button pressed")
-        }, label: {
-            Text("")
-        })
-        .frame(width: m_width, height: m_height, alignment: .center)
-        .background(color)
-        .cornerRadius(45)
-        */
-        
-        Button("Erase")
+        Button(" ")
         {
             viewModel.AddColor(color)
         }
