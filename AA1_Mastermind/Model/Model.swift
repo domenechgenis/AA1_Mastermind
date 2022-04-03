@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct Combination
+struct Combination : Identifiable
 {
-    var m_position: Int
+    let id = UUID()
     var colors: [Color]
 }

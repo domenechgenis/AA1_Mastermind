@@ -10,9 +10,8 @@ import SwiftUI
 
 struct PreviewView: View
 {
-    @ObservedObject var viewModel: ViewModel
+    var combination : Combination
     var m_try: String
-    
     private let m_width: CGFloat = 35.0;
     private let m_height: CGFloat = 35.0;
     
@@ -25,20 +24,12 @@ struct PreviewView: View
             .font(.title)
             .foregroundColor(.gray)
             Spacer()
-            Circle()
-                .fill(Color.gray)
-                .frame(width: m_width, height: m_height)
-            Circle()
-                .fill(Color.gray)
-                .frame(width: m_width, height: m_height)
-            Circle()
-                .fill(Color.gray)
-                .frame(width: m_width, height: m_height)
-            Circle()
-                .fill(Color.gray)
-                .frame(width: m_width, height: m_height)
+            ForEach(combination.colors,id: \.self){ color in
+                Circle()
+                    .fill(color)
+                    .frame(width: m_width, height: m_height)
+            }
             Spacer()
-            
             VStack
             {
                 Circle()

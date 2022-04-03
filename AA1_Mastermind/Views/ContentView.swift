@@ -21,15 +21,10 @@ struct ContentView: View {
             {
                 List
                 {
-                    PreviewView(viewModel: viewModel, m_try: "9 - ")
-                    PreviewView(viewModel: viewModel, m_try: "8 - ")
-                    PreviewView(viewModel: viewModel, m_try: "7 - ")
-                    PreviewView(viewModel: viewModel, m_try: "6 - ")
-                    PreviewView(viewModel: viewModel, m_try: "5 - ")
-                    PreviewView(viewModel: viewModel, m_try: "4 - ")
-                    PreviewView(viewModel: viewModel, m_try: "3 - ")
-                    PreviewView(viewModel: viewModel, m_try: "2 - ")
-                    PreviewView(viewModel: viewModel, m_try: "1 - ")
+                    ForEach(viewModel.m_playerCombinations)
+                    { item in
+                        PreviewView(combination: item, m_try: "1 -")
+                    }
                 }
             
                 HStack

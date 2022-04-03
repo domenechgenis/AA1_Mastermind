@@ -12,25 +12,23 @@ class ViewModel: ObservableObject {
     
     //Game Variables
     var m_solution: Combination
-    @Published var m_playerCombinations: Combination
-    
-    
-    @Published var m_CurrentColor : Int
-    
-    
-    @Published var m_CurrentTurn : Int
-    @Published var m_MaxTurns : Int
+    @Published var m_playerCombinations: [Combination] = []
+    var m_CurrentColor : Int = 0
+    var m_CurrentTurn : Int = 0
+    var m_MaxTurns : Int = 0
     
     init()
     {
-        self.m_playerCombinations = Combination(m_position: 1, colors:
-                                                [Color.red,Color.green,Color.blue,Color.purple])
+        m_solution = Combination(colors: [Color.red,Color.green,Color.blue,Color.purple])
         
-        m_solution = Combination(m_position: 0, colors:
-                                    [Color.red,Color.green,Color.blue,Color.purple])
         m_CurrentTurn = 1
         m_MaxTurns = 8
         m_CurrentColor = 0;
+        
+        for _ in 0...m_MaxTurns
+        {
+            m_playerCombinations.append(Combination(colors: [.gray,.gray,.gray,.gray]))
+        }
         
         GetRandomSolution()
     }
@@ -65,10 +63,10 @@ class ViewModel: ObservableObject {
     {
         print("User want to try the following combination...")
         m_CurrentTurn = m_CurrentTurn + 1
-        print(self.m_playerCombinations.colors[0])
-        print(self.m_playerCombinations.colors[1])
-        print(self.m_playerCombinations.colors[2])
-        print(self.m_playerCombinations.colors[3])
+        print(self.m_playerCombinations[0].colors[0])
+        print(self.m_playerCombinations[0].colors[1])
+        print(self.m_playerCombinations[0].colors[2])
+        print(self.m_playerCombinations[0].colors[3])
         
         CheckCombination()
     }
@@ -81,7 +79,7 @@ class ViewModel: ObservableObject {
     func AddColor(_ color : Color)
     {
         print("User want to add the following color...")
-        self.m_playerCombinations.colors[m_CurrentColor] = color
+        self.m_playerCombinations[0].colors[m_CurrentColor] = color
         m_CurrentColor = m_CurrentColor + 1
         
     }
