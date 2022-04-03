@@ -23,7 +23,7 @@ struct ContentView: View {
                 {
                     ForEach(viewModel.m_playerCombinations)
                     { item in
-                        PreviewView(combination: item, m_try: "1 -")
+                        PreviewView(combination: item, m_try: "1 - ")
                     }
                 }
             
