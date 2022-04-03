@@ -11,7 +11,8 @@ import SwiftUI
 struct PreviewView: View
 {
     var combination : Combination
-    var m_try: String
+    var current_index : String
+    
     private let m_width: CGFloat = 35.0;
     private let m_height: CGFloat = 35.0;
     
@@ -20,7 +21,7 @@ struct PreviewView: View
         HStack
         {
             Spacer()
-            Text(m_try)
+            Text("0 - ")
             .font(.title)
             .foregroundColor(.gray)
             Spacer()

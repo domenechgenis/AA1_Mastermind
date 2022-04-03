@@ -23,7 +23,8 @@ struct ContentView: View {
                 {
                     ForEach(viewModel.m_playerCombinations)
                     { item in
-                        PreviewView(combination: item, m_try: "1 - ")
+                        //TODO -> Change 0 to Index
+                        PreviewView(combination: item,current_index: "0 -")
                     }
                 }
             

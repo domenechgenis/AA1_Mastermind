@@ -17,15 +17,12 @@ class ViewModel: ObservableObject {
     var m_solution: Combination
     var m_CurrentIndexColor : Int = 0
     var m_CurrentLine : Int = 0
-    var m_MaxTurns : Int = 0
+    var m_MaxTurns : Int = 12
+    var m_Index : Int = 0
     
     init()
     {
         m_solution = Combination(colors: [Color.gray,Color.gray,Color.gray,Color.gray])
-        
-        m_CurrentIndexColor = 0
-        m_MaxTurns = 12
-        m_CurrentLine = 0;
         
         for _ in 0...m_MaxTurns
         {
@@ -88,7 +85,8 @@ class ViewModel: ObservableObject {
             self.m_playerCombinations[m_CurrentLine].colors[m_CurrentIndexColor] = color
             
             m_CurrentIndexColor = m_CurrentIndexColor + 1
-        }else
+        }
+        else
         {
             print("No more spots available!")
         }
