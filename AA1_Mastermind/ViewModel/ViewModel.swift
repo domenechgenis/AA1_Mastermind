@@ -83,6 +83,21 @@ class ViewModel: ObservableObject
                     self.m_playerTries[m_CurrentLine].colors[i] = Color.red
                 }
             }
+            
+            for i in 0...3
+            {
+                for j in 0...3
+                {
+                    // Check if its correct color and position
+                    if(self.m_playerCombinations[m_CurrentLine].colors[i] == self.m_solution.colors[j])
+                    {
+                        if(self.m_playerTries[m_CurrentLine].colors[i] == Color.gray)
+                        {
+                            self.m_playerTries[m_CurrentLine].colors[i] = Color.white
+                        }
+                    }
+                }
+            }
 
             m_CurrentLine = m_CurrentLine + 1
             m_CurrentIndexColor = 0
