@@ -21,10 +21,12 @@ struct ContentView: View {
             {
                 List
                 {
-                    ForEach(viewModel.m_playerCombinations)
-                    { item in
+                    ForEach(viewModel.m_playerCombinations.indices)
+                    { index in
                         //TODO -> Change 0 to Index
-                        PreviewView(combination: item,current_index: "0 -")
+                        PreviewView(player_combination: viewModel.m_playerCombinations[index],
+                                    player_results : viewModel.m_playerTries[index],
+                                    current_index: String(index))
                     }
                 }
             

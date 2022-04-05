@@ -10,7 +10,8 @@ import SwiftUI
 
 struct PreviewView: View
 {
-    var combination : Combination
+    var player_combination : Combination
+    var player_results : Combination
     var current_index : String
     
     private let m_width: CGFloat = 35.0;
@@ -25,7 +26,7 @@ struct PreviewView: View
             .font(.title)
             .foregroundColor(.gray)
             Spacer()
-            ForEach(combination.colors,id: \.self){ color in
+            ForEach(player_combination.colors,id: \.self){ color in
                 Circle()
                     .fill(color)
                     .frame(width: m_width, height: m_height)
@@ -34,14 +35,14 @@ struct PreviewView: View
             VStack
             {
                 Circle()
-                    .fill(Color.gray)
+                    .fill(player_results.colors[0])
                     .frame(width: m_width / 3, height: m_height / 3)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.black, lineWidth: 1)
                     )
                 Circle()
-                    .fill(Color.gray)
+                    .fill(player_results.colors[1])
                     .frame(width: m_width / 3, height: m_height / 3)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
@@ -52,14 +53,14 @@ struct PreviewView: View
             VStack
             {
                 Circle()
-                    .fill(Color.gray)
+                    .fill(player_results.colors[2])
                     .frame(width: m_width / 3, height: m_height / 3)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.black, lineWidth: 1)
                     )
                 Circle()
-                    .fill(Color.gray)
+                    .fill(player_results.colors[3])
                     .frame(width: m_width / 3, height: m_height / 3)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)

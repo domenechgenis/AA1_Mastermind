@@ -8,10 +8,11 @@
 import Foundation
 import SwiftUI
 
-class ViewModel: ObservableObject {
-    
+class ViewModel: ObservableObject
+{
     //Mutable Variables
     @Published var m_playerCombinations: [Combination] = []
+    @Published var m_playerTries: [Combination] = []
     
     //Game variables
     var m_solution: Combination
@@ -27,6 +28,8 @@ class ViewModel: ObservableObject {
         for _ in 0...m_MaxTurns
         {
             m_playerCombinations.append(Combination(colors: [.gray,.gray,.gray,.gray]))
+            
+            m_playerTries.append(Combination(colors: [.gray,.gray,.gray,.gray]))
         }
         
         GetRandomSolution()
@@ -62,17 +65,22 @@ class ViewModel: ObservableObject {
     {
         if(m_CurrentIndexColor >= 4)
         {
+            //Set answers with player colors
+            for i in 0...3
+            {
+                self.m_playerTries[m_CurrentLine].colors[i] = Color.red
+            }
+
             m_CurrentLine = m_CurrentLine + 1
             m_CurrentIndexColor = 0
         }
-        
     }
     
     func EraseCurrentCombination()
     {
         for i in 0...3
         {
-            self.m_playerCombinations[0].colors[i] = Color.gray
+            self.m_playerCombinations[m_CurrentLine].colors[i] = Color.gray
         }
         m_CurrentIndexColor = 0
     }
