@@ -55,20 +55,33 @@ class ViewModel: ObservableObject
                 m_solution.colors[i] = .purple
                 break
             default:
-                print("Number not complemented, error")
-                break
+                print("Log error number not implemented:")
             }
         }
+        
+        print("The combination is:")
+        print(m_solution.colors[0])
+        print(m_solution.colors[1])
+        print(m_solution.colors[2])
+        print(m_solution.colors[3])
     }
     
     func TryCurrentCombination()
     {
+        var playerCount : Int = 0
+        
         if(m_CurrentIndexColor >= 4)
         {
             //Set answers with player colors
+            // If its present -> White
+            // If its present and same position -> Red
             for i in 0...3
             {
-                self.m_playerTries[m_CurrentLine].colors[i] = Color.red
+                // Check if its correct color and position
+                if(self.m_playerCombinations[m_CurrentLine].colors[i] == self.m_solution.colors[i])
+                {
+                    self.m_playerTries[m_CurrentLine].colors[i] = Color.red
+                }
             }
 
             m_CurrentLine = m_CurrentLine + 1
