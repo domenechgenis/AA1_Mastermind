@@ -12,11 +12,13 @@ struct ContentView: View {
     var body: some View {
         VStack
         {
+            Text(viewModel.m_GameTittle)
+                .font(.title)
+                .foregroundColor(.orange)
             //Padding on top
             Spacer()
             Spacer()
             
-            //Tittle??
             VStack
             {
                 List

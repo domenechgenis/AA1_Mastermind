@@ -13,6 +13,7 @@ class ViewModel: ObservableObject
     //Mutable Variables
     @Published var m_playerCombinations: [Combination] = []
     @Published var m_playerTries: [Combination] = []
+    @Published var m_GameTittle : String = "MASTERMIND"
     
     //Game variables
     var m_solution: Combination
@@ -20,6 +21,7 @@ class ViewModel: ObservableObject
     var m_CurrentLine : Int = 0
     var m_MaxTurns : Int = 12
     var m_Index : Int = 0
+    var m_IsGameRunning : Bool = true
     
     init()
     {
@@ -31,6 +33,8 @@ class ViewModel: ObservableObject
             
             m_playerTries.append(Combination(colors: [.gray,.gray,.gray,.gray]))
         }
+        
+        m_IsGameRunning = true
         
         GetRandomSolution()
     }
@@ -68,7 +72,7 @@ class ViewModel: ObservableObject
     
     func TryCurrentCombination()
     {
-        var playerCount : Int = 0
+        var m_CorrectColors : Int = 0
         
         if(m_CurrentIndexColor >= 4)
         {
@@ -81,7 +85,19 @@ class ViewModel: ObservableObject
                 if(self.m_playerCombinations[m_CurrentLine].colors[i] == self.m_solution.colors[i])
                 {
                     self.m_playerTries[m_CurrentLine].colors[i] = Color.red
+                    m_CorrectColors = m_CorrectColors + 1;
                 }
+            }
+            
+            if(m_CorrectColors >= 4)
+            {
+                m_GameTittle = "YOU WON!"
+                m_IsGameRunning = false
+            }
+            else if(m_CorrectColors < 4 && m_CurrentLine >= 12)
+            {
+                m_GameTittle = "YOU LOSE!"
+                m_IsGameRunning = false
             }
             
             for i in 0...3
@@ -115,16 +131,19 @@ class ViewModel: ObservableObject
     
     func AddColor(_ color : Color)
     {
-        if(m_CurrentIndexColor < 4)
+        if(m_IsGameRunning)
         {
-            print("Color added succefully!")
-            self.m_playerCombinations[m_CurrentLine].colors[m_CurrentIndexColor] = color
-            
-            m_CurrentIndexColor = m_CurrentIndexColor + 1
-        }
-        else
-        {
-            print("No more spots available!")
+            if(m_CurrentIndexColor < 4)
+            {
+                print("Color added succefully!")
+                self.m_playerCombinations[m_CurrentLine].colors[m_CurrentIndexColor] = color
+                
+                m_CurrentIndexColor = m_CurrentIndexColor + 1
+            }
+            else
+            {
+                print("No more spots available!")
+            }
         }
     }
 }
